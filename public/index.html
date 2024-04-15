@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Money Tracker</title>
+</head>
+<body class="bg-gray-900">
+    <form action="/add" method="POST">
+        <div class="py-9 flex justify-center items-center">
+            <img class="w-28 h-18 mr-2" src="https://bharatintern.live/static/logo-0946e9bd7220dc6ced94171785535121.png" alt="logo">
+            <h1 class="text-white text-3xl font-semibold">Money Tracker App</h1>
+        </div>
+        <div class="input-section text-center space-x-6">
+            <label class="text-white w-[140px] text-lg" for="category_select">Category: </label>
+            <select id="category_select" name="category_select">
+                <option value="Expense " class="text-black bg-gray-200">Expense</option>
+                <option value="Income" class="text-black bg-gray-200">Income</option>
+            </select>
+            <label class="text-white text-lg" for="amount_input">Amount:</label>
+            <input class="text-black bg-gray-200 py-2 px-2 outline-none rounded-lg text-lg font-semimedium" type="number" id="amount_input" name="amount_input">
+            <label class="text-white text-lg" for="info">Info:</label>
+            <input class="text-black bg-gray-200 py-2 px-2 outline-none rounded-lg text-lg font-semimedium" type="text" id="info" name="info">
+            <label class="text-white text-lg" for="date_input">Date:</label>
+            <input class="text-black bg-gray-200 py-2 px-2 outline-none rounded-lg text-lg font-semimedium" type="date" id="date_input" name="date_input">
+            <button class="text-white bg-green-400 px-6 py-2 rounded-lg font-semibold" id="add_btn">Add</button>
+        </div>
+    </form>
+
+    <div class="expenses-list flex flex-col ">
+        <h2 class="text-white text-center text-2xl py-9">Expenses and Incomes List</h2>
+        <table class="text-center border border-white mx-6">
+            <thead class="border border-white">
+                <tr>
+                    <th class="text-white border border-white py-2 text-lg bg-[#f96a09]">Category</th>
+                    <th class="text-white border border-white py-2 text-lg bg-[#f96a09]">Amount</th>
+                    <th class="text-white border border-white py-2 text-lg bg-[#f96a09]">Info</th>
+                    <th class="text-white border border-white py-2 text-lg bg-[#f96a09]">Date</th>
+                    <th class="text-white text-lg bg-[#f96a09]"> Delete </th>
+                </tr>
+            </thead>
+            <tbody id="expense-table-body" class="text-white border border-white">
+
+            </tbody>
+            <tfoot class="border border-white">
+                <td class="text-white border border-white">Total:</td>
+                <td class="text-white border-white" id="total-amount"></td>
+                
+            </tfoot>
+        </table>
+    </div>
+    <script src="script.js"></script> 
+</body>
+</html>
